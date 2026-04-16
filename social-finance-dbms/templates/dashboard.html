@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Spider Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+
+<div class="navbar">
+
+<a href="/dashboard">Dashboard</a>
+<a href="/addloan">Add Loan</a>
+<a href="/loans">Loans</a>
+<a href="/transactions">Transactions</a>
+<a href="/users">Users</a>
+
+</div>
+
+
+<div class="container">
+
+<h2>🕷️ Loan Analytics Dashboard</h2>
+
+
+<!-- DASHBOARD CARD GRID -->
+
+<div class="dashboard-grid">
+
+
+<div class="card">
+<h3>Total Users</h3>
+<h1>{{ users_count }}</h1>
+</div>
+
+
+<div class="card">
+<h3>Total Loans</h3>
+<h1>{{ loans_count }}</h1>
+</div>
+
+
+<div class="card">
+<h3>Total Transactions</h3>
+<h1>{{ transaction_count }}</h1>
+</div>
+
+
+<div class="card">
+<h3>Total Loan Amount</h3>
+<h1>₹ {{ total }}</h1>
+</div>
+
+
+</div>
+
+</div>
+
+
+</body>
+</html>

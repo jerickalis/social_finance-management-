@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Users</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="navbar">
+
+<a href="/dashboard">Dashboard</a>
+<a href="/addloan">Add Loan</a>
+<a href="/loans">Loans</a>
+<a href="/transactions">Transactions</a>
+
+</div>
+
+
+<div class="container">
+
+<h2>🕷️ Users Management</h2>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Delete</th>
+</tr>
+
+{% for user in data %}
+
+<tr>
+
+<td>{{ user[0] }}</td>
+<td>{{ user[1] }}</td>
+<td>{{ user[2] }}</td>
+<td>{{ user[3] }}</td>
+
+<td>
+
+<a href="/delete/{{ user[0] }}" style="color:red;">
+Delete
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

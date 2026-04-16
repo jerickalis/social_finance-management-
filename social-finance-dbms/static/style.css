@@ -1,0 +1,432 @@
+ /* =========================
+   SPIDER-MAN DARK THEME UI
+========================= */
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* =========================
+   BODY BACKGROUND
+========================= */
+
+body {
+
+    font-family:'Segoe UI', Arial, sans-serif;
+
+    background:black;
+
+    color:white;
+
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+
+    background:black;
+
+    padding:18px;
+
+    text-align:center;
+
+    border-bottom:3px solid red;
+
+    box-shadow:0px 3px 18px red;
+
+}
+
+/* navbar links */
+
+.navbar a {
+
+    color:white;
+
+    margin:0 18px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    font-size:18px;
+
+    position:relative;
+
+    transition:0.3s ease;
+
+}
+
+/* underline animation */
+
+.navbar a::after {
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0%;
+
+    height:2px;
+
+    background:red;
+
+    transition:0.4s;
+
+}
+
+.navbar a:hover::after {
+
+    width:100%;
+
+}
+
+.navbar a:hover {
+
+    color:red;
+
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+
+    width:80%;
+
+    margin:40px auto;
+
+    padding:35px;
+
+    background:rgba(0,0,0,0.92);
+
+    border-radius:15px;
+
+    box-shadow:
+    0px 0px 25px red,
+    inset 0px 0px 12px #330000;
+
+    animation:fadeIn 0.8s ease-in-out;
+
+}
+
+
+/* fade animation */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1,h2,h3 {
+
+    text-align:center;
+
+    color:red;
+
+    margin-bottom:20px;
+
+}
+
+
+/* =========================
+   INPUT FIELDS
+========================= */
+
+input,select {
+
+    width:100%;
+
+    padding:12px;
+
+    margin-top:12px;
+
+    background:#111;
+
+    color:white;
+
+    border:1px solid red;
+
+    border-radius:6px;
+
+    font-size:15px;
+
+    transition:0.3s;
+
+}
+
+/* glow on focus */
+
+input:focus,select:focus {
+
+    outline:none;
+
+    box-shadow:0px 0px 10px red;
+
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+
+    background:linear-gradient(to right,red,darkred);
+
+    color:white;
+
+    padding:14px;
+
+    border:none;
+
+    margin-top:18px;
+
+    border-radius:8px;
+
+    width:100%;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:0.35s ease;
+
+}
+
+/* hover effect */
+
+button:hover {
+
+    transform:scale(1.05);
+
+    box-shadow:0px 0px 18px red;
+
+}
+
+
+/* =========================
+   TABLE DESIGN
+========================= */
+
+table {
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:25px;
+
+    background:black;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+}
+
+/* table header */
+
+th {
+
+    background:linear-gradient(to right,red,darkred);
+
+    padding:14px;
+
+}
+
+/* table cells */
+
+td {
+
+    padding:14px;
+
+    border-bottom:1px solid #222;
+
+}
+
+/* row hover */
+
+tr:hover {
+
+    background:#111;
+
+}
+
+
+/* =========================
+   DASHBOARD CARDS GRID
+========================= */
+
+.card {
+
+    background:#0a0a0a;
+
+    padding:30px;
+
+    margin:20px auto;
+
+    width:60%;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0px 0px 20px red;
+
+    transition:0.4s ease;
+
+}
+
+/* hover animation */
+
+.card:hover {
+
+    transform:translateY(-8px);
+
+    box-shadow:0px 0px 35px red;
+
+}
+
+
+/* =========================
+   SUCCESS MESSAGE BOX
+========================= */
+
+.success-box {
+
+    background:#111;
+
+    padding:22px;
+
+    border-radius:10px;
+
+    box-shadow:0px 0px 18px red;
+
+    text-align:center;
+
+    font-size:18px;
+
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+a {
+
+    color:red;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+a:hover {
+
+    color:white;
+
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE FIX
+========================= */
+
+@media(max-width:768px){
+
+.container{
+
+    width:95%;
+
+}
+
+.card{
+
+    width:95%;
+
+}
+
+.navbar a{
+
+    display:inline-block;
+
+    margin:10px;
+
+}
+
+}
+/* DASHBOARD GRID LAYOUT */
+
+.dashboard-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+margin-top:30px;
+
+}
+
+
+/* BIG NUMBERS STYLE */
+
+.card h1{
+
+font-size:42px;
+
+margin-top:10px;
+
+color:white;
+
+transition:0.4s;
+
+}
+
+
+/* NUMBER HOVER EFFECT */
+
+.card:hover h1{
+
+color:red;
+
+transform:scale(1.1);
+
+}

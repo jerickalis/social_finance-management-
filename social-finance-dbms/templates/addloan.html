@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Add Loan</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="navbar">
+
+<a href="/dashboard">Dashboard</a>
+<a href="/loans">Loans</a>
+<a href="/transactions">Transactions</a>
+<a href="/users">Users</a>
+
+</div>
+
+
+<div class="container">
+
+<h2>🕷️ Add Loan Request</h2>
+
+<form action="/insertloan" method="POST">
+
+<label>Select User</label>
+
+<select name="user_id" required>
+
+<option value="">Choose User</option>
+
+{% for user in users %}
+
+<option value="{{ user[0] }}">
+{{ user[0] }} - {{ user[1] }}
+</option>
+
+{% endfor %}
+
+</select>
+
+<input name="amount" placeholder="Loan Amount" required>
+
+<input name="interest" placeholder="Interest Rate (%)" required>
+
+<input name="duration" placeholder="Duration (months)" required>
+
+<button type="submit">Submit Loan Request</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
